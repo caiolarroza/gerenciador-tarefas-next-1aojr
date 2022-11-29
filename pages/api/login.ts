@@ -1,11 +1,12 @@
 import CryptoJS from "crypto-js";
 import jwt from 'jsonwebtoken';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { connectToDB } from '../../middlewares/connectToDB';
 import { UserModel } from '../../models/User';
 import { DefaultMessageResponse } from '../../types/DefaultMessageResponse';
 import { User } from '../../types/User';
 
-export default async (req: NextApiRequest, res: NextApiResponse<DefaultMessageResponse | any>) => {
+const loginEndpoint = async (req: NextApiRequest, res: NextApiResponse<DefaultMessageResponse | any>) => {
 
   try {
     if (req.method !== 'POST') {
@@ -56,3 +57,5 @@ export default async (req: NextApiRequest, res: NextApiResponse<DefaultMessageRe
   }
 
 }
+
+export default connectToDB(loginEndpoint);
