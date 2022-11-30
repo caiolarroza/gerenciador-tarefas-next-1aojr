@@ -1,0 +1,60 @@
+@import '~bootstrap/scss/bootstrap';
+@import './config.scss';
+
+@font-face {
+  font-family: 'Biennale Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../public/fonts/BiennaleRegular.otf') format('opentype');
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Biennale Regular';
+  height: 100%;
+}
+
+#__next {
+  flex: 1 1 0%;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  height: 100%;
+  justify-content: center;
+  padding: 0;
+}
+
+input {
+  color: $primaryColor;
+  font-size: 14px;
+  letter-spacing: .01em;
+
+  outline: none;
+
+  &::placeholder {
+    color: $mediumGreyColor;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $mediumGreyColor;
+  }
+
+  &::-ms-input-placeholder {
+    color: $mediumGreyColor;
+  }
+}
+
+.error {
+  text-align: center;
+  color: $errorColor;
+  font-weight: bold;
+}
+
+
+@import './login.scss';
