@@ -29,10 +29,24 @@ body {
   padding: 0;
 }
 
-input {
+input,
+select {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
   color: $primaryColor;
   font-size: 14px;
   letter-spacing: .01em;
+  min-width: 150px;
+  background-color: transparent;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom: 1ox solid $mediumGreyColor;
+
+  &:focus {
+    border-bottom: 1ox solid $primaryColor;
+  }
 
   outline: none;
 
@@ -56,5 +70,24 @@ input {
   font-weight: bold;
 }
 
+@media screen and (min-width: $mediaQueryDesktop) {
+
+  input,
+  select {
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 5px;
+    outline: none;
+  }
+
+  select {
+    min-width: 125px;
+  }
+}
+
+
 
 @import './login.scss';
+@import './header.scss';
+@import './footer.scss';
+@import './filters.scss';
