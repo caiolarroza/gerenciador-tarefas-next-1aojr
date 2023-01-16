@@ -115,7 +115,7 @@ export const Home: NextPage<HomeProps> = ({ setToken }) => {
           <input type='text' placeholder="Nome da tarefa"
             value={name} onChange={e => setName(e.target.value)} />
           <input type='date' placeholder="Previsão da tarefa"
-            value={finishPrevisionDate} onChange={e => setFinishPrevisionDate(e.target.value)} />
+            value={finishPrevisionDate} onChange={e => setFinishPrevisionDate(e.target.value)} required />
         </Modal.Body>
         <Modal.Footer>
           <div className="button col-12">

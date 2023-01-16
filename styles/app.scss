@@ -70,6 +70,24 @@ select {
   font-weight: bold;
 }
 
+.success {
+  text-align: center;
+  color: $successColor;
+  font-weight: bold;
+}
+
+.link {
+  display: block;
+  margin-top: 10px;
+  color: $primaryColor;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    color: $primaryColor;
+  }
+}
+
 @media screen and (min-width: $mediaQueryDesktop) {
 
   input,
@@ -91,4 +109,5 @@ select {
 @import './filters.scss';
 @import './list.scss';
 @import './item.scss';
-@import './modal.scss'
+@import './modal.scss';
+@import './input-date.scss';

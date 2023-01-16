@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { executeRequest } from '../services/api';
 
 type LoginProps = {
-  setToken(s: string): void
+  setToken(s: string): void,
+  setPage(s: string): void
 }
 
-export const Login: NextPage<LoginProps> = ({ setToken }) => {
+export const Login: NextPage<LoginProps> = ({ setToken, setPage }) => {
 
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
@@ -68,6 +69,8 @@ export const Login: NextPage<LoginProps> = ({ setToken }) => {
           />
         </div>
         <button onClick={doLogin} disabled={loading}>{loading ? 'Carregando....' : 'Login'}</button>
+
+        <a className='link' onClick={() => setPage('signup')}>Cadastre-se</a>
       </div>
     </div>
   )
