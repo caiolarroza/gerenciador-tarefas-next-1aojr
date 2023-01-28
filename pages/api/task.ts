@@ -143,6 +143,8 @@ const saveTask = async (req: NextApiRequest, res: NextApiResponse<DefaultMessage
       return res.status(400).json({ error: 'Nome da tarefa invalida' });
     }
 
+    // A API não está salvando a data errada por conta da conversão de hora, então não houve
+    // a necessidade de tratar a data - utilizei o parâmetro 'day' para considerar apenas o dia da tarefa
     if (!task.finishPrevisionDate || moment(task.finishPrevisionDate).isBefore(moment(), 'day')) {
       return res.status(400).json({ error: 'Data de previsao invalida ou menor que hoje' });
     }
